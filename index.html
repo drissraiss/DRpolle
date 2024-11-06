@@ -7,6 +7,8 @@
     <link rel="icon" href="assets/icons/icon.png" />
     <title>DR Polle</title>
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 </head>
 
 <body class="preload">
@@ -234,7 +236,7 @@
                         <input type="search" id="inupt_search_box" name="search_input"
                             placeholder="Rechercher une pathologie,  un XXX ou un autre XXX..." />
                         <button>
-                            <svg viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="search_btn_svg" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M8.5104 17.6144C10.5861 17.6144 12.4731 16.8528 13.945 15.564L20.5495 22.3988C20.7005 22.5551 20.8892 22.6332 21.0967 22.6332C21.3043 22.6332 21.493 22.5551 21.644 22.3988C21.9459 22.0864 21.9459 21.5787 21.644 21.2662L15.0394 14.4313C16.266 12.9081 17.0208 10.9358 17.0208 8.80722C17.0208 3.9447 13.209 0 8.5104 0C3.83062 0 0 3.96422 0 8.80722C0 13.6697 3.83062 17.6144 8.5104 17.6144ZM8.5104 1.60131C12.3599 1.60131 15.4734 4.84299 15.4734 8.80722C15.4734 12.791 12.3599 16.0131 8.5104 16.0131C4.6609 16.0131 1.54734 12.7714 1.54734 8.80722C1.54734 4.84299 4.67977 1.60131 8.5104 1.60131Z"
                                     fill="#B40400" />
@@ -337,7 +339,7 @@
                         <input type="search" name="search_input"
                             placeholder="Rechercher un acte, une intervention, une pathologie, ...." />
                         <button>
-                            <svg viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="search_btn_svg" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M8.5104 17.6144C10.5861 17.6144 12.4731 16.8528 13.945 15.564L20.5495 22.3988C20.7005 22.5551 20.8892 22.6332 21.0967 22.6332C21.3043 22.6332 21.493 22.5551 21.644 22.3988C21.9459 22.0864 21.9459 21.5787 21.644 21.2662L15.0394 14.4313C16.266 12.9081 17.0208 10.9358 17.0208 8.80722C17.0208 3.9447 13.209 0 8.5104 0C3.83062 0 0 3.96422 0 8.80722C0 13.6697 3.83062 17.6144 8.5104 17.6144ZM8.5104 1.60131C12.3599 1.60131 15.4734 4.84299 15.4734 8.80722C15.4734 12.791 12.3599 16.0131 8.5104 16.0131C4.6609 16.0131 1.54734 12.7714 1.54734 8.80722C1.54734 4.84299 4.67977 1.60131 8.5104 1.60131Z"
                                     fill="#B40400" />
@@ -420,73 +422,83 @@
                     </a>
                 </div>
             </section>
-            <section class=" sec-2">
-                <article class="article-1">
-                    <div class="full">
-                        <div class="first">
-                            <h2 class="article-title">chirurgie du genou</h2>
-                        </div>
-                        <div class="bg-col">
-                            <div class="content">
-                                <div>
-                                    <h2>chirurgie du genou</h2>
+            <section class="sec-2 swiper" id="cont-2__swiper" >
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <article class="article-1">
+                            <div class="full">
+                                <div class="first">
+                                    <h2 class="article-title">chirurgie du genou</h2>
                                 </div>
-                                <div class="txt">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lobortis gravida aenean risus cras purus sit. Nunc netus rhoncus, sit ac aliquet sit. Eu id in leo amet mattis in. Penatibus id egestas sed consectetur mauris sapien laoreet feugiat. Nam amet pellentesque ac nisl egestas sed velit. Eu morbi tortor, ante consectetur. Consequat mattis posuere tortor enim, dictum posuere purus. Erat feugiat enim ornare amet. Adipiscing gravida non feugiat lectus. Viverra ac, magna pharetra ut fames id.
-                                    </p>
-                                </div>
-                                <div>
-                                    <a href="#">en savoir plus</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="article-2">
-                    <div class="full">
-                        <div class="first">
-                            <h2 class="article-title">chirurgie de la cheville</h2>
-                        </div>
-                        <div class="bg-col">
-                            <div class="content">
-                                <div>
-                                    <h2>chirurgie de la cheville</h2>
-                                </div>
-                                <div class="txt">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lobortis gravida aenean risus cras purus sit. Nunc netus rhoncus, sit ac aliquet sit. Eu id in leo amet mattis in. Penatibus id egestas sed consectetur mauris sapien laoreet feugiat. Nam amet pellentesque ac nisl egestas sed velit. Eu morbi tortor, ante consectetur. Consequat mattis posuere tortor enim, dictum posuere purus. Erat feugiat enim ornare amet. Adipiscing gravida non feugiat lectus. Viverra ac, magna pharetra ut fames id.
-                                    </p>
-                                </div>
-                                <div>
-                                    <a href="#">en savoir plus</a>
+                                <div class="bg-col">
+                                    <div class="content">
+                                        <div>
+                                            <h2>chirurgie du genou</h2>
+                                        </div>
+                                        <div class="txt">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lobortis gravida aenean risus cras purus sit. Nunc netus rhoncus, sit ac aliquet sit. Eu id in leo amet mattis in. Penatibus id egestas sed consectetur mauris sapien laoreet feugiat. Nam amet pellentesque ac nisl egestas sed velit. Eu morbi tortor, ante consectetur. Consequat mattis posuere tortor enim, dictum posuere purus. Erat feugiat enim ornare amet. Adipiscing gravida non feugiat lectus. Viverra ac, magna pharetra ut fames id.
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <a href="#">en savoir plus</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </article>
                     </div>
-                </article>
-                <article class="article-3">
-                    <div class="full">
-                        <div class="first">
-                            <h2 class="article-title">chirurgie du pied</h2>
-                        </div>
-                        <div class="bg-col">
-                            <div class="content">
-                                <div>
-                                    <h2>chirurgie du pied</h2>
+                    <div class="swiper-slide">
+                        <article class="article-2">
+                            <div class="full">
+                                <div class="first">
+                                    <h2 class="article-title">chirurgie de la cheville</h2>
                                 </div>
-                                <div class="txt">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lobortis gravida aenean risus cras purus sit. Nunc netus rhoncus, sit ac aliquet sit. Eu id in leo amet mattis in. Penatibus id egestas sed consectetur mauris sapien laoreet feugiat. Nam amet pellentesque ac nisl egestas sed velit. Eu morbi tortor, ante consectetur. Consequat mattis posuere tortor enim, dictum posuere purus. Erat feugiat enim ornare amet. Adipiscing gravida non feugiat lectus. Viverra ac, magna pharetra ut fames id.
-                                    </p>
-                                </div>
-                                <div>
-                                    <a href="#">en savoir plus</a>
+                                <div class="bg-col">
+                                    <div class="content">
+                                        <div>
+                                            <h2>chirurgie de la cheville</h2>
+                                        </div>
+                                        <div class="txt">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lobortis gravida aenean risus cras purus sit. Nunc netus rhoncus, sit ac aliquet sit. Eu id in leo amet mattis in. Penatibus id egestas sed consectetur mauris sapien laoreet feugiat. Nam amet pellentesque ac nisl egestas sed velit. Eu morbi tortor, ante consectetur. Consequat mattis posuere tortor enim, dictum posuere purus. Erat feugiat enim ornare amet. Adipiscing gravida non feugiat lectus. Viverra ac, magna pharetra ut fames id.
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <a href="#">en savoir plus</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </article>
                     </div>
-                </article>
+                    <div class="swiper-slide">
+                        <article class="article-3">
+                            <div class="full">
+                                <div class="first">
+                                    <h2 class="article-title">chirurgie du pied</h2>
+                                </div>
+                                <div class="bg-col">
+                                    <div class="content">
+                                        <div>
+                                            <h2>chirurgie du pied</h2>
+                                        </div>
+                                        <div class="txt">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lobortis gravida aenean risus cras purus sit. Nunc netus rhoncus, sit ac aliquet sit. Eu id in leo amet mattis in. Penatibus id egestas sed consectetur mauris sapien laoreet feugiat. Nam amet pellentesque ac nisl egestas sed velit. Eu morbi tortor, ante consectetur. Consequat mattis posuere tortor enim, dictum posuere purus. Erat feugiat enim ornare amet. Adipiscing gravida non feugiat lectus. Viverra ac, magna pharetra ut fames id.
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <a href="#">en savoir plus</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="swiper-pagination cont-2__swiper-pagination"></div>
+
             </section>
         </div>
         <section class="s2">
@@ -653,64 +665,76 @@
                         <a href="#" class="show_more">En savoir plus<i class="row_to_right_black"></i></a>
                     </div>
                 </section>
-                <section class="sec-2">
-                    <article class="article-1">
-                        <div class="first">
-                            <h2 class="article-title">genou</h2>
+                <section class="sec-2 swiper" id="s3__swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article class="article-1">
+                                <div class="first">
+                                    <h2 class="article-title">genou</h2>
+                                </div>
+                                <div class="bg-col">
+                                    <div class="content">
+                                        <div>
+                                            <h2>genou</h2>
+                                        </div>
+                                        <div class="txt">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitasse varius diam egestas lectus sagittis commodo eros risus. </p>
+                                            <p>Mauris molestie sed cras dictum volutpat in cursus nibh. Accumsan nibh vel at sed cursus tristique faucibus urna. </p>
+                                        </div>
+                                        <div>
+                                            <a href="#">en savoir plus</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
                         </div>
-                        <div class="bg-col">
-                            <div class="content">
-                                <div>
-                                    <h2>genou</h2>
+                        <div class="swiper-slide">
+                            <article class="article-2">
+                                <div class="first">
+                                    <h2 class="article-title">cheville</h2>
                                 </div>
-                                <div class="txt">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitasse varius diam egestas lectus sagittis commodo eros risus. </p>
-                                    <p>Mauris molestie sed cras dictum volutpat in cursus nibh. Accumsan nibh vel at sed cursus tristique faucibus urna. </p>
+                                <div class="bg-col">
+                                    <div class="content">
+                                        <div>
+                                            <h2>cheville</h2>
+                                        </div>
+                                        <div class="txt">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitasse varius diam egestas lectus sagittis commodo eros risus. </p>
+                                            <p>Mauris molestie sed cras dictum volutpat in cursus nibh. Accumsan nibh vel at sed cursus tristique faucibus urna. </p>
+                                        </div>
+                                        <div>
+                                            <a href="#">en savoir plus</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <a href="#">en savoir plus</a>
-                                </div>
-                            </div>
+                            </article>
                         </div>
-                    </article>
-                    <article class="article-2">
-                        <div class="first">
-                            <h2 class="article-title">cheville</h2>
+                        <div class="swiper-slide">
+                            <article class="article-3">
+                                <div class="first">
+                                    <h2 class="article-title">pied</h2>
+                                </div>
+                                <div class="bg-col">
+                                    <div class="content">
+                                        <div>
+                                            <h2>pied</h2>
+                                        </div>
+                                        <div class="txt">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitasse varius diam egestas lectus sagittis commodo eros risus. </p>
+                                            <p>Mauris molestie sed cras dictum volutpat in cursus nibh. Accumsan nibh vel at sed cursus tristique faucibus urna. </p>
+                                        </div>
+                                        <div>
+                                            <a href="#">en savoir plus</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
                         </div>
-                        <div class="bg-col">
-                            <div class="content">
-                                <div>
-                                    <h2>cheville</h2>
-                                </div>
-                                <div class="txt">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitasse varius diam egestas lectus sagittis commodo eros risus. </p>
-                                    <p>Mauris molestie sed cras dictum volutpat in cursus nibh. Accumsan nibh vel at sed cursus tristique faucibus urna. </p>
-                                </div>
-                                <div>
-                                    <a href="#">en savoir plus</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="article-3">
-                        <div class="first">
-                            <h2 class="article-title">pied</h2>
-                        </div>
-                        <div class="bg-col">
-                            <div class="content">
-                                <div>
-                                    <h2>pied</h2>
-                                </div>
-                                <div class="txt">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitasse varius diam egestas lectus sagittis commodo eros risus. </p>
-                                    <p>Mauris molestie sed cras dictum volutpat in cursus nibh. Accumsan nibh vel at sed cursus tristique faucibus urna. </p>
-                                </div>
-                                <div>
-                                    <a href="#">en savoir plus</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
+                        
+                        
+                        
+                    </div>
+                    <div class="swiper-pagination s3__swiper-pagination"></div>
                 </section>
             </div>
         </section>
@@ -1052,6 +1076,11 @@
             </div>
             <!-- form respond -->
             <div class="form-comment" id="form-comment">
+                <button class="form-comment__closeBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                    </svg>
+                </button>
                 <div class="h2">
                     <h2>Laisseé votre commentaire</h2>
                 </div>
@@ -1328,7 +1357,7 @@
             </li>
             <li>
                 <a href="">
-                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="20" height="21" viewBox="0 1 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_338_94323)">
                             <path d="M17.8571 2.64286H15.7143V1.2143C15.7143 0.819796 15.3945 0.5 15 0.5C14.6055 0.5 14.2857 0.819796 14.2857 1.2143V2.64286H5.71427V1.2143C5.71427 0.819796 5.39447 0.5 5.00001 0.5C4.60555 0.5 4.28571 0.819796 4.28571 1.2143V2.64286H2.14286C0.959388 2.64286 0 3.60224 0 4.78571V18.3571C0 19.5406 0.959388 20.5 2.14286 20.5H17.8571C19.0406 20.5 20 19.5406 20 18.3571V4.78571C20 3.60224 19.0406 2.64286 17.8571 2.64286ZM18.5714 18.3571C18.5714 18.7516 18.2516 19.0714 17.8571 19.0714H2.14286C1.74835 19.0714 1.42856 18.7516 1.42856 18.3571V9.07142H18.5714V18.3571ZM18.5714 7.64287H1.42856V4.78571C1.42856 4.39121 1.74835 4.07141 2.14286 4.07141H4.28571V5.49997C4.28571 5.89447 4.60551 6.21427 5.00001 6.21427C5.39451 6.21427 5.71431 5.89447 5.71431 5.49997V4.07141H14.2857V5.49997C14.2857 5.89447 14.6055 6.21427 15 6.21427C15.3945 6.21427 15.7143 5.89447 15.7143 5.49997V4.07141H17.8572C18.2517 4.07141 18.5715 4.39121 18.5715 4.78571V7.64287H18.5714Z" fill="black"/>
                             <path d="M14.7732 10.7093C14.4964 10.442 14.0576 10.442 13.7808 10.7093L8.57146 15.9186L6.21929 13.5664C5.93553 13.2924 5.48336 13.3002 5.20931 13.5839C4.94195 13.8608 4.94195 14.2996 5.20931 14.5764L8.06646 17.4335C8.34541 17.7124 8.79755 17.7124 9.07645 17.4335L14.7907 11.7193C15.0648 11.4355 15.0569 10.9834 14.7732 10.7093Z" fill="black"/>
@@ -1446,7 +1475,12 @@
     <div class="copyright">
         Copyright 2022 XXXXXXXX &copy;
     </div>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
     <script src="./scripts/script.js"></script>
+
+    
 </body>
 
 </html>
