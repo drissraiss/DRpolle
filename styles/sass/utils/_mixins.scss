@@ -1,0 +1,66 @@
+@use "variables" as *;
+
+// mixin give element the same width and height
+@mixin squire($size) {
+    width: $size;
+    height: $size;
+}
+
+// for text decoration underline to the element with pseudo-element before
+@mixin underline($width, $direction: left) {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        width: $width;
+        bottom: 0;
+        border-bottom: 4px solid $main-color;
+        @if ($direction == center) {
+            left: 50%;
+            transform: translateX(-50%);
+        } @else if($direction == right) {
+            right: 0;
+        } @else {
+            left: 0;
+        }
+    }
+}
+// Mixin to adjust child element position, making it overlap parent padding
+@mixin overlap-padding($left, $right: $left) {
+    position: relative;
+    left: -$left;
+    right: -$right;
+    width: calc(100% + ($left + $right));
+}
+
+// underline with transition
+@mixin underline-transition($border-width, $border-color, $bottom, $transition-duration, $invers: false, $direction:left) {
+    position: relative;
+    cursor: pointer;
+    &::before {
+        content: "";
+        position: absolute;
+        border-bottom: $border-width solid $border-color;
+        @if($direction==right){
+            right: 0;
+        }@else if ($direction==center){
+            left: 50%;
+            transform: translateX(-50%);
+        }@else {
+            left:0;
+        }
+        bottom: $bottom;
+        width: if($invers, 100%, 0);
+        transition: #{$transition-duration}s width ease;
+    }
+    &:hover::before {
+        width: if($invers, 0, 100%);
+    }
+}
+
+//
+@mixin list-links-columns($columns: 2) {
+    &__list-links__container {
+        grid-template-columns: repeat($columns, 1fr);
+    }
+}

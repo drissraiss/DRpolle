@@ -1,0 +1,70 @@
+@use "../components/articles";
+@use "../utils/mixins" as *;
+
+.main {
+    ul {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+    }
+    &__articles {
+        &__item {
+            margin-bottom: 32px;
+            &__header {
+                margin-bottom: 32px;
+            }
+            &__body {
+
+
+                .card {
+
+                    margin-bottom: 8px;
+                    &::after {
+                        content: "";
+                        width: 100%;
+                        display: block;
+                        height: 11px;
+                        background-color: #2E2C2C;
+                    }
+                    &__header {
+                        font-family: Gilroy;
+                        font-size: 16px;
+                        font-weight: 800;
+                        line-height: 19.6px;
+                        letter-spacing: 0.1em;
+                        text-align: left;
+                    }
+                    &__body {
+                        margin-top: 6px;
+                        margin-bottom: 6px;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        &__itm {
+                            font-size: 15px;
+                            font-weight: 300;
+                            line-height: 25px;
+                            letter-spacing: 0.05em;
+
+                            text-underline-position: from-font;
+                            text-decoration-skip-ink: none;
+                            
+                            &:last-child {
+                                text-align: end;
+                                text-transform: uppercase;
+                                font-size: 14px;
+                                font-weight: 500;
+                                line-height: 19.12px;
+                                letter-spacing: 0.1em;
+                            }
+
+                        }
+                    }
+
+
+                }
+            }
+        }
+    }
+    @include list-links-columns(2);
+
+}

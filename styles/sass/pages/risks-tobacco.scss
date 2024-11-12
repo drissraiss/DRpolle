@@ -1,0 +1,76 @@
+@use "../components/articles";
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+// main__articles__item__document__label
+.main {
+    &__articles {
+        &__item {
+            &__document {
+                padding: 10px {
+                    left:20px
+                };
+                display: flex;
+                flex-wrap: wrap;
+                font-family: Gilroy;
+                font-weight: 800;
+                background-color: #fff;
+                border-radius: 40px;
+                align-items: center;
+                justify-content: space-between;
+                row-gap: 10px;
+                &__label {
+                    color: #000;
+                    font-size: 18px;
+                    line-height: 30px;
+                    text-align: left;
+                }
+                &__button {
+                    transition: .4s background-image ease ;
+                    font-size: 14px;
+                    line-height: 20.02px;
+                    text-align: center;
+                    padding: 10px 20px;
+                    border-radius: 50px;
+                    overflow: hidden;
+                    background-image: linear-gradient( $main-color, $second-color );
+                     &:hover::before{
+                        opacity: 1;
+                    }
+                    position: relative;
+                    &::before {
+                        transition: .6s opacity ease;
+                        content: "";
+                        background-color: #000;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top:0;
+                        left:0;
+                        opacity: 0;
+                    }
+                    .cnt {
+                        position: relative;
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $max-width) {
+    .main {
+        &__header__txt-img__img {
+            height: 240px;
+            @include overlap-padding(20px);
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &__dropdown {
+            margin-top: 0;
+        }
+    }
+}

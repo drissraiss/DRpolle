@@ -1,0 +1,46 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/placeholders" as *;
+@use "../components/articles";
+.main {
+    h1 {
+        padding: 0;
+        margin: 0;
+        &::before {
+            display: none;
+        }
+    }
+    &__header {
+        h2 {
+            font-family: Gilroy;
+            font-size: 20px;
+            font-weight: 800;
+            line-height: 27.8px;
+            letter-spacing: 0.1em;
+            text-align: left;
+            text-transform: uppercase;
+            padding-bottom: 12px;
+            margin: 10px 0 15px 0;
+            @include underline(90px);
+        }
+        &__txt-img {
+            &__img {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @include list-links-columns();
+}
+
+@media (max-width: $max-width) {
+    .main {
+        &__articles {
+            &__item {
+                scroll-margin-top: 139px;
+            }
+        }
+    }
+}
+

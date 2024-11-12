@@ -1,0 +1,34 @@
+@use "utils/variables" as *;
+@use "utils/mixins" as *;
+@use "base/reset";
+@use "base/base";
+@use "components/link";
+@use "components/txt-img";
+@use "components/breadcrumb";
+@use "components/typographie";
+@use "components/comments";
+@use "components/dropdown";
+@use "components/list-links";
+@use "components/list-links-v2";
+/* nav {
+    display: none;
+} */
+
+::selection {
+    background-color: $main-color;
+}
+
+.main {
+    margin: 20px 100px 0;
+    img {
+        width: 100%;
+    }
+
+}
+@media (max-width: $max-width) {
+    .main {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+

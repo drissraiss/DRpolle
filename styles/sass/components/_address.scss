@@ -1,0 +1,130 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.main {
+    &__address {
+        @include overlap-padding(100px, 100px);
+        color: black;
+        background-color: #f0f0f0;
+        padding: 40px 100px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        &__info {
+            ul {
+                font-family: Gilroy;
+                font-size: 16px;
+                font-weight: 800;
+                line-height: 19.6px;
+                letter-spacing: 0.1em;
+                text-align: left;
+                text-underline-position: from-font;
+                text-decoration-skip-ink: none;
+
+                list-style: none;
+                margin-top: 16px;
+                li {
+                    margin-top: 8px;
+                    display: flex;
+                    gap: 10px;
+                    font-size: 18px;
+                    font-weight: 800;
+                    line-height: 30px;
+                    text-underline-position: from-font;
+                    text-decoration-skip-ink: none;
+                    .li-data {
+                        font-family: Gilroy Light;
+                    }
+                    svg {
+                        margin-top: 8px;
+                    }
+                }
+            }
+            > div {
+                > *:not(h3) {
+                    margin-left: 36px;
+                }
+                margin-bottom: 24px;
+            }
+            h3 {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                font-family: Gilroy;
+                font-size: 25px;
+                font-weight: 800;
+                line-height: 30px;
+                letter-spacing: 0.1em;
+                text-align: left;
+                text-underline-position: from-font;
+                text-decoration-skip-ink: none;
+                text-transform: uppercase;
+                margin-bottom: 8px;
+            }
+            .phone {
+                display: inline-block;
+                transform: translateX(-5px);
+                //---
+                --c: #{$main-color}; /* the border color */
+                --b: 1.5px; /* the border thickness*/
+                --g: 5px; /* the gap on hover */
+                padding: calc(var(--g) + var(--b));
+                --_g: #0000 25%, var(--c) 0;
+                background: conic-gradient(from 180deg at top var(--b) right var(--b), var(--_g)) var(--_i, 200%) 0 /200% var(--_i, var(--b)) no-repeat,
+                    conic-gradient(at bottom var(--b) left var(--b), var(--_g)) 0 var(--_i, 200%) / var(--_i, var(--b)) 200% no-repeat;
+                transition: 0.3s, background-position 0.3s 0.3s;
+                &:hover {
+                    --_i: 100%;
+                    transition: 0.3s, background-size 0.3s 0.3s;
+                }
+                //---
+                font-family: Gilroy;
+                font-size: 15px;
+                font-weight: 800;
+                line-height: 18.38px;
+                text-align: left;
+                text-underline-position: from-font;
+                text-decoration-skip-ink: none;
+                color: $main-color;
+            }
+            .txt {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 16.14px;
+                letter-spacing: 0.02em;
+                text-align: left;
+                text-underline-position: from-font;
+                text-decoration-skip-ink: none;
+            }
+            .txt-1 {
+                transition: 0.4s all ease;
+                &:hover {
+                    color: $main-color;
+                }
+            }
+            .txt-2 {
+                line-height: 30px;
+            }
+
+            .eml {
+                display: inline-block;
+                @include underline-transition(1.5px, $main-color, -3px, 0.5);
+            }
+        }
+        &__maps #map {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+        }
+    }
+}
+
+@media (max-width: $max-width) {
+    .main {
+        &__address {
+            @include overlap-padding(20px, 20px);
+            grid-template-columns: 1fr;
+            padding: 20px;
+        }
+    }
+}

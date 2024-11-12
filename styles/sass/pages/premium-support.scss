@@ -1,0 +1,9 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+@use "../components/articles";
+@use "../components/txt-sld";
+
+
+.main__dropdown {
+    margin-top: 0;
+}

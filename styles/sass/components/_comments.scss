@@ -1,0 +1,12 @@
+@use "../utils/variables" as *;
+
+section.s4 {
+    padding: 12px 100px 21px ;
+}
+
+
+@media (max-width: $max-width) {
+    section.s4 {
+        padding: 12px 20px 21px ;
+    }
+}

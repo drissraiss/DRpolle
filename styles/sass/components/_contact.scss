@@ -1,0 +1,161 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/placeholders" as *;
+.main {
+    &__contact {
+        &__description {
+            margin-bottom: 16px;
+        }
+        &__form {
+            margin-bottom: 24px;;
+            &__group {
+                position: relative;
+                margin-bottom: 22px;
+                border-bottom: 1px solid #fff;
+                height: 27px;
+                &__input {
+                    font-family: Gilroy Light;
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                    color: #fff;
+                    outline: none;
+                    border: none;
+                    &:focus + label,
+                    &:valid + label {
+                        font-size: 12px;
+                        transform: translateY(-70%);
+                    }
+                }
+
+                &__label {
+                    cursor: text;
+                    user-select: none;
+                    transition: 0.8s all ease;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    font-size: 15px;
+                    font-weight: 400;
+                    line-height: 30px;
+                    &::after {
+                        content: " *";
+                    }
+                }
+                &-checkbox {
+                    display: flex;
+                    align-items: flex-start;
+                    column-gap: 10px;
+                    margin-bottom: 18px;
+                    &__label {
+                        font-size: 15px;
+                        font-weight: 400;
+                        line-height: 30px;
+                        text-align: left;
+                        text-underline-position: from-font;
+                        text-decoration-skip-ink: none;
+                        user-select: none;
+                        cursor: pointer;
+                    }
+                    &__checkbox-box {
+                        min-width: 15px;
+                        @include squire(15px);
+                        position: relative;
+                        margin-top: 6px;
+                        cursor: pointer;
+                        border: 2px solid $main-color;
+                        border-radius: 4px;
+                        position: relative;
+                        transition: border-color 0.2s ease;
+                        &::after {
+                            content: "";
+                            display: block;
+                            width: 3px;
+                            height: 8px;
+                            border: solid #fff;
+                            border-width: 0 2px 2px 0;
+                            opacity: 0;
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%, -60%) rotate(45deg);
+                            transition: opacity 0.3s ease;
+                        }
+                    }
+                    &__input {
+                        display: none;
+                    }
+                    &__input:checked + &__checkbox-box {
+                        $main-color : $main-color;
+                        border-color: $main-color;
+                        background-color: $main-color;
+                    }
+                    &__input:checked + &__checkbox-box::after {
+                        opacity: 1;
+                    }
+                }
+                &-document {
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    column-gap: 10px;
+                    &__info {
+                        font-size: 15px;
+                        font-weight: 400;
+                        line-height: 30px;
+                    }
+                    &__label {
+                        font-family: Gilroy;
+                        font-size: 15px;
+                        font-weight: 800;
+                        line-height: 25px;
+                        letter-spacing: 0.05em;
+                    }
+                    &__input {
+                        display: none;
+                    }
+                    &__btn-document {
+                        display: inline-block;
+                        padding: 5px 15px;
+
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 20.02px;
+                        text-align: center;
+                        background-color: $main-color;
+                        border-radius: 30px;
+                        cursor: pointer;
+                        transition: background-color 0.4s ease, color 0.4s ease;
+                        &:hover {
+                            background-color: #fff;
+                            color: $main-color;
+                        }
+                    }
+                }
+                &-submit {
+                    text-align: end;
+                    button {
+                        font-family: Gilroy;
+                        font-size: 18px;
+                        font-weight: 800;
+                        line-height: 25.74px;
+                        text-align: center;
+                        text-underline-position: from-font;
+                        text-decoration-skip-ink: none;
+                        background-color: $main-color;
+                        transition: background-color 0.4s ease, color 0.4s ease;
+                        color:#fff;
+                        border-radius: 50px ;
+                        padding: 10px 20px;
+                        border: none;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: #fff;
+                            color: $main-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,179 @@
+.main__section {
+  margin-top: 32px;
+}
+.main__section > h2 {
+  font-family: Gilroy;
+  font-size: 37px;
+  font-weight: 800;
+  line-height: 45.33px;
+  text-align: left;
+}
+.main__section > h3, .main__articles__article__txt__header .main__section > h4 {
+  font-family: Gilroy;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 27.8px;
+  letter-spacing: 0.1em;
+  text-align: left;
+  text-transform: uppercase;
+  padding-bottom: 12px;
+  margin: 10px 0 15px 0;
+  position: relative;
+}
+.main__section > h3::before, .main__articles__article__txt__header .main__section > h4::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  bottom: 0;
+  border-bottom: 4px solid #b40400;
+  left: 0;
+}
+.main__articles__header {
+  padding: 32px 0;
+  text-align: center;
+}
+.main__articles__header h2 {
+  font-family: Gilroy;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 36px;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+  position: relative;
+}
+.main__articles__header h2::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  bottom: 0;
+  border-bottom: 4px solid #b40400;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.main__articles__header p {
+  margin-bottom: 0;
+}
+.main__articles__article {
+  color: #000;
+  margin-bottom: 40px;
+}
+.main__articles__article__img img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main__articles__article__txt {
+  background-color: #fff;
+}
+.main__articles__article__txt__header {
+  padding-top: 15px;
+  text-align: center;
+}
+.main__articles__article__txt__header h3, .main__articles__article__txt__header h4 {
+  font-family: Gilroy;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 30px;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+.main__articles__article__txt__header h4 {
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 22.05px;
+  position: relative;
+  z-index: inherit;
+  margin-bottom: 13px;
+  padding-bottom: 13px;
+}
+.main__articles__article__txt__header h4::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  bottom: 0;
+  border-bottom: 4px solid #b40400;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.main__articles__article__txt__body {
+  padding: 10px;
+  padding-bottom: 15px;
+}
+.main__articles__article__txt__body p {
+  text-align: center;
+}
+.main__list-links__container {
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 960px) {
+  .main__section__txt-img {
+        grid-template-areas: "txt" "img";
+  }
+  .main__section__txt-img__img {
+    grid-area: img;
+  }
+  .main__section__txt-img__txt {
+    grid-area: txt;
+  }
+  .main__articles__article {
+        grid-template-areas: "img" "txt";
+  }
+  .main__articles__article__img {
+    grid-area: img;
+  }
+  .main__articles__article__txt {
+    grid-area: txt;
+    margin-top: -70px;
+    position: relative;
+    z-index: 1;
+  }
+  [class$=__img] {
+    position: relative;
+    left: -20px;
+    right: -20px;
+    width: calc(100% + 40px);
+  }
+}
+
+@media (max-width: 960px) {
+  .main__section__txt-img__img {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+  .main__articles__article > .main__section__txt-img__img {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .main__section__txt-img__txt {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .main__articles__article > .main__section__txt-img__txt {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+  .main__articles__article__img {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+  .main__articles__article > .main__articles__article__img {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .main__articles__article__txt {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .main__articles__article > .main__articles__article__txt {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+}

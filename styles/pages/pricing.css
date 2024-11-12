@@ -1,0 +1,116 @@
+.main__articles {
+  padding-bottom: 32px;
+}
+.main__articles__item {
+  scroll-margin-top: 154.67px;
+  padding-top: 24px;
+}
+.main__articles__item h3 {
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  font-family: Gilroy;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 36px;
+  text-align: left;
+}
+.main__articles__item h3::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  bottom: 0;
+  border-bottom: 4px solid #b40400;
+  left: 0;
+}
+.main__articles__item ul {
+  margin-left: 1em;
+  margin-left: 2.5em;
+}
+.main__articles__item__txt-img {
+  gap: 16px;
+}
+.main__articles__item__txt-img__img {
+  margin-bottom: 24px;
+}
+.main__articles__item__child {
+  padding-top: 24px;
+}
+.main__articles__item__child h4 {
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  font-family: Gilroy;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 30px;
+  letter-spacing: 0.1em;
+  text-align: left;
+}
+.main__articles__item__child h4::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  bottom: 0;
+  border-bottom: 4px solid #b40400;
+  left: 0;
+}
+
+.main ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+.main__articles__item {
+  margin-bottom: 32px;
+}
+.main__articles__item__header {
+  margin-bottom: 32px;
+}
+.main__articles__item__body .card {
+  margin-bottom: 8px;
+}
+.main__articles__item__body .card::after {
+  content: "";
+  width: 100%;
+  display: block;
+  height: 11px;
+  background-color: #2E2C2C;
+}
+.main__articles__item__body .card__header {
+  font-family: Gilroy;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 19.6px;
+  letter-spacing: 0.1em;
+  text-align: left;
+}
+.main__articles__item__body .card__body {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+.main__articles__item__body .card__body__itm {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 25px;
+  letter-spacing: 0.05em;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+}
+.main__articles__item__body .card__body__itm:last-child {
+  text-align: end;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19.12px;
+  letter-spacing: 0.1em;
+}
+.main__list-links__container {
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+}

@@ -1,0 +1,40 @@
+@use "../utils/variables" as *;
+
+.main {
+    &__header {
+        &__ctgs {
+            &__list {
+                margin-top: 10px;
+                margin-bottom: 32px;
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 10px;
+                &__item {
+                    transition: 0.4s background-color ease, 0.4s color ease;
+                    font-family: Gilroy;
+                    font-size: 14px;
+                    font-weight: 800;
+                    line-height: 24px;
+                    letter-spacing: 0.05em;
+                    text-align: center;
+                    color: $main-color;
+                    border: $main-color 1px solid;
+                    text-transform: uppercase;
+                    padding: 5px 8px;
+                    &:hover {
+                        color: #fff;
+                        background-color: $main-color;
+                        border-color: $main-color;
+                    }
+                    &--active {
+                        color: #fff;
+                        background-color: $main-color;
+                        border-color: $main-color;
+                    }
+                }
+            }
+        }
+    }
+}

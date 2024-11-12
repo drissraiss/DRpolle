@@ -1,0 +1,42 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/placeholders" as *;
+@use "../components/address";
+.main {
+    &__header__txt-img {
+        &__img {
+            overflow: hidden;
+        }
+    }
+    &__clinic-swiper {
+        padding-bottom: 25px;
+        margin-bottom: 20px;
+    }
+
+    @include list-links-columns(3);
+
+    &__address {
+        grid-template-areas: "maps info";
+        gap: 10px 80px;
+        &__info {
+            grid-area: info;
+            &__maps {
+                grid-area: maps;
+            }
+        }
+    }
+}
+@media (max-width: $max-width) {
+    .main {
+        &__header__txt-img {
+            @include overlap-padding(20px, 20px);
+            &__txt {
+                margin: 0 20px;
+            }
+        }
+        &__address {
+            grid-template-areas: "info" "maps";
+            grid-template-columns: 1fr;
+        }
+    }
+}

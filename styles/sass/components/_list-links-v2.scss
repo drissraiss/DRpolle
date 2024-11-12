@@ -1,0 +1,52 @@
+@use "../utils/variables" as *;
+@use "../utils/placeholders" as *;
+@use "../utils/mixins" as *;
+
+.main__list-links-v2 {
+    padding: 20px;
+    border: 1px solid $main-color;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    h2 {
+        font-family: Gilroy;
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 22.05px;
+        letter-spacing: 0.15em;
+        text-align: left;
+        margin-bottom: 10px;
+        
+    }
+    &__container {
+        row-gap: 10px;
+        display: inline-flex;
+        flex-direction: column;
+    }
+    &__item {
+        transition: .5s margin-left ease,.5s color ease;
+        &:hover {
+            margin-left: 20px;
+            color: $main-color;
+        }
+        font-family: Gilroy;
+        font-size: 17px;
+        font-weight: 800;
+        line-height: 20.83px;
+        letter-spacing: 0.1em;
+        text-align: left;
+        display: flex;
+        column-gap: 12px;
+        align-items: center;
+        &::before {
+            content: url("/assets/svg/row_red_itmes_list.svg");
+            margin-top: -4px;
+        }
+    }
+}
+
+@media (max-width: $max-width) {
+    .main__list-links-v2 {
+        &__container {
+        }
+    }
+}

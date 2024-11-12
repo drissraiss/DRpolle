@@ -1,0 +1,66 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+
+.breadcrumb {
+    user-select: none;
+    overflow: hidden;
+    background-color: #fff;
+    color: #000;
+    padding: 10px;
+    padding-left: 33px;
+    font-size: 15px;
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 5px 25px;
+        position: relative;
+        padding-left: 5px;
+        &::before {
+            content: "";
+            height: 18px;
+            width: 5px;
+            position: absolute;
+            border-left: 1.5px solid #656060;
+            border-bottom: 1.5px solid #656060;
+            top:-10px;
+            left: -5px;
+        }
+    }
+    &__item {
+        position: relative;
+        letter-spacing: 0.05rem;
+
+        a {
+
+            @include underline-transition(1px, #000, 0, .5, false, center);
+        }
+        &:last-child {
+            cursor: context-menu;
+            font-family: Gilroy;
+            a:hover {
+                text-decoration: none;
+            }
+            &::after {
+                display: none;
+            }
+        }
+        &::after {
+            position: absolute;
+            content: "";
+            @include squire(7px);
+            transform: translateY(-50%) rotate(45deg);
+            border-top: 1.5px solid black;
+            border-right: 1.5px solid black;
+            right: -15px;
+            top: 50%;
+        }
+    }
+}
+
+@media (max-width: $max-width) {
+    .breadcrumb {
+        padding-left: 25px;
+    }
+}

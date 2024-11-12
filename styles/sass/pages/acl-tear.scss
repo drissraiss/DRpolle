@@ -1,0 +1,26 @@
+@use "../components/articles";
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+.main {
+    &__header__txt-img__img {
+        img {
+            background-color: #fff;
+        }
+    }
+}
+@media (max-width: $max-width) {
+    .main {
+        &__header__txt-img__img {
+            height: 240px;
+            @include overlap-padding(20px);
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &__dropdown {
+            margin-top: 0;
+        }
+    }
+}

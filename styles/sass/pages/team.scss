@@ -1,0 +1,128 @@
+@use "../utils/mixins" as *;
+@use "../utils/placeholders" as *;
+@use "../utils/variables" as *;
+
+.main {
+    &__section {
+        margin-top: 32px;
+        > h2 {
+            font-family: Gilroy;
+            font-size: 37px;
+            font-weight: 800;
+            line-height: 45.33px;
+            text-align: left;
+        }
+        > h3 {
+            font-family: Gilroy;
+            font-size: 20px;
+            font-weight: 800;
+            line-height: 27.8px;
+            letter-spacing: 0.1em;
+            text-align: left;
+            text-transform: uppercase;
+            padding-bottom: 12px;
+            margin: 10px 0 15px 0;
+            @include underline(90px);
+        }
+    }
+    &__articles {
+        &__header {
+            padding: 32px 0;
+            text-align: center;
+            h2 {
+                font-family: Gilroy;
+                font-size: 36px;
+                font-weight: 800;
+                line-height: 36px;
+                text-underline-position: from-font;
+                text-decoration-skip-ink: none;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+                display: inline-block;
+                @include underline(90px, center);
+            }
+            p {
+                margin-bottom: 0;
+            }
+        }
+        &__article {
+            color: #000;
+            margin-bottom: 40px;
+            &__img {
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            &__txt {
+                background-color: #fff;
+                &__header {
+                    padding-top: 15px;
+                    text-align: center;
+                    h3 {
+                        font-family: Gilroy;
+                        font-size: 25px;
+                        font-weight: 800;
+                        line-height: 30px;
+                        letter-spacing: 0.1em;
+                        margin-bottom: 4px;
+                    }
+                    h4 {
+                        @extend h3;
+                        text-transform: uppercase;
+                        font-size: 18px;
+                        line-height: 22.05px;
+                        @include underline(90px, center);
+                        z-index: inherit;
+                        margin-bottom: 13px;
+                        padding-bottom: 13px;
+                    }
+                }
+                &__body {
+                    p {
+                        text-align: center;
+                    }
+                    padding: 10px {
+                        bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
+    @include list-links-columns(3);
+}
+@media (max-width: $max-width) {
+    .main {
+        &__section {
+            &__txt-img {
+                grid-template-areas: "txt" "img";
+                &__img {
+                    grid-area: img;
+                }
+                &__txt {
+                    grid-area: txt;
+                }
+                // main__section__txt-img__txt
+            }
+        }
+        &__articles {
+            &__article {
+                grid-template-areas: "img" "txt";
+                &__img {
+                    grid-area: img;
+                }
+                &__txt {
+                    grid-area: txt;
+                    margin-top: -70px;
+                    position:relative;
+                    z-index: 1;
+                }
+                
+            }
+        }
+    }
+
+    [class$="__img"] {
+        @include overlap-padding(20px);
+    }
+}

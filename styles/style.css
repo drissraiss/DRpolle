@@ -35,7 +35,8 @@ strong {
 /* start style header */
 header {
     width: 100%;
-    height: 90px;
+    height: 75px;
+    user-select: none;
 }
 header .header_main * {
     font-family: Gilroy;
@@ -178,12 +179,24 @@ footer .number_phone a::after,
 header .header_main .number_phone a::after {
     right: -50px;
 }
+footer .number_phone a::after {
+    animation-name: anim_link_number_fooer_0;
+}
 @keyframes anim_button_contact_0 {
     from {
         width: 0;
     }
     to {
         width: 45px;
+    }
+}
+
+@keyframes anim_link_number_fooer_0 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 30px;
     }
 }
 footer .number_phone a {
@@ -212,7 +225,18 @@ footer .number_phone a:hover::after {
         width: 0;
     }
 }
+footer .number_phone a:hover::after {
+    animation-name: anim_link_number_fooer;
+}
 
+@keyframes anim_link_number_fooer {
+    from {
+        width: 30px;
+    }
+    to {
+        width: 0;
+    }
+}
 header .header_main .number_phone {
     margin-left: 30px;
     grid-template-columns: auto auto;
@@ -663,7 +687,7 @@ main section.s1 h1 span {
     animation: fade_in 0.5s;
     transition: all 0.5s ease;
     border: 1px solid transparent;
-    z-index: 1;
+    z-index: 2;
 }
 .scroll_top.hide {
     animation: fade_out 0.5s forwards;
@@ -679,8 +703,8 @@ main section.s1 h1 span {
     }
 }
 .scroll_top:hover {
-    background-color: #ececec;
-    border-color: #b40400;
+    background-color: #d4d4d4;
+    transform: scale(.95);
 }
 
 .scroll_top svg {
@@ -706,7 +730,7 @@ main section.s1 h1 span {
     bottom: 0px;
     right: 9px;
     transition: all 0.4s ease;
-    z-index: 1;
+    z-index: 2;
 }
 #appointment:hover {
     transform: scale(.9);
@@ -920,9 +944,9 @@ main .cont-2 .sec-2 article .content div:last-child a,
 main .s3 .sec-2 article .content div:last-child a {
     position: relative;
 }
-main .s3 .sec-2 article .content div:last-child a {
-    /* padding: 0 20px; */
-}
+/* main .s3 .sec-2 article .content div:last-child a {
+    padding: 0 20px;
+} */
 main .cont-2 .sec-2 article .content div:last-child a::before,
 main .s3 .sec-2 article .content div:last-child a::before {
     position: absolute;
@@ -1361,14 +1385,14 @@ main .cont-3 a.inside_link:hover::before {
     }
 }
 
-main section.s4 {
+section.s4 {
     background-color: #ebebeb;
     color: #000;
     padding: 12px 0 21px;
     position: relative;
 }
 
-main section.s4 h1 {
+section.s4 h1 {
     text-align: center;
     margin: 20px 20px 45px 20px;
     padding-bottom: 7px;
@@ -1379,7 +1403,7 @@ main section.s4 h1 {
     line-height: 70px;
     letter-spacing: 3.1px;
 }
-main section.s4 h1::before {
+section.s4 h1::before {
     position: absolute;
     border-bottom: 4px solid #b40400;
     content: "";
@@ -1388,7 +1412,7 @@ main section.s4 h1::before {
     left: 50%;
     transform: translateX(-50%);
 }
-main section.s4 .comment {
+section.s4 .comment {
     background-color: #fff;
     padding: 0px 0px 0px 0px;
     display: grid;
@@ -1398,30 +1422,30 @@ main section.s4 .comment {
 .s4__cont__titleForPhone {
     display: none;
 }
-main section.s4 .comment .content {
+section.s4 .comment .content {
     margin: 23px 60px 20px 6px;
 }
-main section.s4 .comments > .ul > .li {
+section.s4 .comments > .ul > .li {
     margin-left: 35px;
 }
-main section.s4 .comments {
+section.s4 .comments {
     margin-right: 30px;
 }
-main section.s4 .ul .li {
+section.s4 .ul .li {
     margin-left: 95px;
 }
-main section.s4 .comment {
+section.s4 .comment {
     margin-bottom: 10px;
 }
 
-main section.s4 .header_comment {
+section.s4 .header_comment {
     display: grid;
     grid-template-columns: auto 1fr;
     margin-bottom: 8px;
     column-gap: 13px;
     position: relative;
 }
-main section.s4 .header_comment .name {
+section.s4 .header_comment .name {
     grid-column: span 2;
     font-family: Gilroy;
     font-size: 17px;
@@ -1429,17 +1453,17 @@ main section.s4 .header_comment .name {
     line-height: 24.31px;
     text-align: left;
 }
-main section.s4 .header_comment .date {
+section.s4 .header_comment .date {
     color: #00000089;
     font-size: 14px;
     font-weight: 300;
     line-height: 20.02px;
     text-align: left;
 }
-main section.s4 .header_comment .respond:hover {
+section.s4 .header_comment .respond:hover {
     color: #b40400;
 }
-main section.s4 .header_comment .respond {
+section.s4 .header_comment .respond {
     display: inline-block;
     color: #000;
     text-decoration: underline;
@@ -1449,7 +1473,7 @@ main section.s4 .header_comment .respond {
     font-weight: 800;
     line-height: 20.02px;
 }
-main section.s4 .body_comment p {
+section.s4 .body_comment p {
     font-size: 14px;
     font-weight: 300;
     line-height: 20.02px;
@@ -1457,16 +1481,16 @@ main section.s4 .body_comment p {
     color: #313233;
     letter-spacing: -0.07px;
 }
-main section.s4 .comment .profile img {
+section.s4 .comment .profile img {
     border-radius: 50%;
     width: 94px;
     height: 94px;
 }
-main section.s4 .comment .profile {
+section.s4 .comment .profile {
     padding: 20px;
 }
 
-main section.s4 .form-comment {
+section.s4 .form-comment {
     position: relative;
     overflow: hidden;
     background-color: #fff;
@@ -1491,7 +1515,7 @@ main section.s4 .form-comment {
         margin: 0;
     }
 }
-main section.s4 .form-comment__closeBtn {
+section.s4 .form-comment__closeBtn {
     position: absolute;
     right: 10px;
     top: 10px;
@@ -1507,7 +1531,7 @@ main section.s4 .form-comment__closeBtn {
         }
     }
 }
-main section.s4 .form-comment.show_form_respond{
+section.s4 .form-comment.show_form_respond{
     animation-name: anim_form_respond;
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -1523,13 +1547,13 @@ main section.s4 .form-comment.show_form_respond{
     }
 }
 
-main section.s4 .comments.show-few {
+section.s4 .comments.show-few {
     height: 700px;
     overflow: hidden;
     mask-image: linear-gradient(to top, #ffffff00, #fff);
 }
 
-main section.s4 .btn_show_all_comments {
+section.s4 .btn_show_all_comments {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -1549,7 +1573,7 @@ main section.s4 .btn_show_all_comments {
     line-height: 20.02px;
     text-align: center;
 }
-main section.s4 .btn_show_all_comments:hover {
+section.s4 .btn_show_all_comments:hover {
     border-color: #b40400;
     background-color: #fff;
     color: #b40400;
@@ -1808,7 +1832,10 @@ footer {
     margin: auto;
     padding: 40px 10px 20px;
 }
-
+footer .link_contact a::after {
+    right: -20px;
+    width: 45px;
+}
 body > div.links {
     background: linear-gradient(to top, #650200, #b40400);
 }
@@ -1849,8 +1876,8 @@ body > .links ul li:first-child::before {
 }
 footer .form-comment input,
 footer .form-comment textarea,
-main section.s4 .form-comment textarea,
-main section.s4 .form-comment input {
+section.s4 .form-comment textarea,
+section.s4 .form-comment input {
     display: block;
     width: 100%;
     margin: 10px 0;
@@ -1869,28 +1896,28 @@ main section.s4 .form-comment input {
     padding-top: 13px;
     padding-bottom: 5px;
 }
-main section.s4 .form-comment {
+section.s4 .form-comment {
     margin-bottom: 10px;
 }
 footer .form-comment .div_relative:nth-child(2),
-main section.s4 .form-comment .div_relative:nth-child(2) {
+section.s4 .form-comment .div_relative:nth-child(2) {
     margin-top: 14px;
 }
 
 footer .form-comment .div_relative,
-main section.s4 .form-comment .div_relative {
+section.s4 .form-comment .div_relative {
     position: relative;
 }
 footer .form-comment textarea,
-main section.s4 .form-comment textarea {
+section.s4 .form-comment textarea {
     resize: vertical;
 }
 footer .form-comment .h2,
-main section.s4 .form-comment .h2 {
+section.s4 .form-comment .h2 {
     position: relative;
 }
 footer .form-comment h2,
-main section.s4 .form-comment h2 {
+section.s4 .form-comment h2 {
     margin-left: 35px;
     padding-top: 15px;
     letter-spacing: -0.2px;
@@ -1900,24 +1927,24 @@ main section.s4 .form-comment h2 {
     line-height: 30.63px;
 }
 footer .form-comment form,
-main section.s4 .form-comment form {
+section.s4 .form-comment form {
     margin-top: 32px;
 }
 
 footer .form-comment .h2::before,
-main section.s4 .form-comment .h2::before {
+section.s4 .form-comment .h2::before {
     content: url("../assets/svg/plus_hover.svg");
     position: absolute;
     transform: translate(-50%, -10%);
 }
-main section.s4 .form-comment .h2::before {
+section.s4 .form-comment .h2::before {
     transform: none;
 }
 
 footer .form-comment input:focus + label,
-footer .form-comment textarea:focus + label,
+footer .form-comment textarea + label,
 footer .form-comment input:valid + label,
-footer .form-comment textarea:valid + label {
+footer .form-comment textarea + label {
     margin-top: -8px;
     font-size: 12px;
     color: #dedede;
@@ -1929,7 +1956,7 @@ footer .form-comment textarea:valid + label {
 }
 
 footer .form-comment label,
-main section.s4 .form-comment label {
+section.s4 .form-comment label {
     font-weight: lighter;
     position: absolute;
 
@@ -1940,24 +1967,24 @@ main section.s4 .form-comment label {
     color: #ffffffce;
 }
 footer .form-comment form div.button,
-main section.s4 .form-comment form div.button {
+section.s4 .form-comment form div.button {
     text-align: end;
 }
 footer .form-comment form div.button button:hover,
-main section.s4 .form-comment form div.button button:hover {
+section.s4 .form-comment form div.button button:hover {
     background-color: #fff;
     color: #b40400;
     transition: 0.5s all ease;
 
 }
-main section.s4 .form-comment form div.button button{
+section.s4 .form-comment form div.button button{
     border: 1px solid transparent;
 }
-main section.s4 .form-comment form div.button button:hover {
+section.s4 .form-comment form div.button button:hover {
     border-color: #b40400 ;
 }
 footer .form-comment form button,
-main section.s4 .form-comment form button {
+section.s4 .form-comment form button {
     padding: 9px 31px;
     color: #fff;
     border: none;
@@ -1971,29 +1998,30 @@ main section.s4 .form-comment form button {
     line-height: 20.02px;
     text-align: center;
 }
-main section.s4 .form-comment textarea,
-main section.s4 .form-comment input {
+section.s4 .form-comment textarea,
+section.s4 .form-comment input {
     color: #000;
 }
-main section.s4 .form-comment input:focus + label,
-main section.s4 .form-comment textarea:focus + label,
-main section.s4 .form-comment textarea:valid + label,
-main section.s4 .form-comment input:valid + label {
+section.s4 .form-comment input:focus + label,
+section.s4 .form-comment textarea:focus + label,
+section.s4 .form-comment textarea:valid + label,
+section.s4 .form-comment input:valid + label {
     margin-top: -8px;
     font-size: 12px;
     top: 0;
 }
-main section.s4 .form-comment {
+section.s4 .form-comment {
     transition: 0.4s all;
 }
-main section.s4 .form-comment h2 {
+section.s4 .form-comment h2 {
     margin-left: 50px;
 }
-main section.s4 .form-comment label {
+section.s4 .form-comment label {
     z-index: 1;
     color: #000;
     cursor: text;
 }
+
 
 footer .p2offooter {
     display: grid;
@@ -2001,6 +2029,7 @@ footer .p2offooter {
     width: 100%;
     margin-top: 87px;
     align-items: center;
+
 }
 footer .p2offooter .link_contact {
     text-align: end;
@@ -2076,7 +2105,7 @@ div#nav {
 @media (max-width: 960px) {
     /* Header */
     header {
-        height: 60px;
+        height: 59px;
     }
     header .header_main .number_phone,
     header .header_main .link_contact,
@@ -2470,25 +2499,25 @@ div#nav {
         margin: 0;
         font-size: 15px;
     }
-    main section.s4 .header_comment {
+    section.s4 .header_comment {
         display: block !important;
     }
-    main section.s4 .ul .li {
+    section.s4 .ul .li {
         margin-left: 22px;
     }
-    main section.s4 .comments > .ul > .li {
+    section.s4 .comments > .ul > .li {
         margin-left: 0;
     }
-    main section.s4 .comments.show-few {
+    section.s4 .comments.show-few {
         height: 652px;
     }
-    main section.s4 .btn_show_all_comments {
+    section.s4 .btn_show_all_comments {
         border-radius: 0;
         bottom: 41px;
         font-family: Gilroy Light;
         padding: 14px 20px;
     }
-    main section.s4 .comment .content {
+    section.s4 .comment .content {
         margin: 14px 15px 14px 0px;
         p {
             letter-spacing: 0.4px;
@@ -2506,7 +2535,7 @@ div#nav {
             }
         }
     }
-    main section.s4 .comment .profile {
+    section.s4 .comment .profile {
         padding: 14px;
     }
 
@@ -2672,7 +2701,7 @@ div#nav {
         }
     }
 
-    main section.s4 h1 {
+    section.s4 h1 {
         font-size: 36px;
         font-weight: 800;
         line-height: 36px;
@@ -2684,12 +2713,12 @@ div#nav {
         margin-bottom: 30px;
     }
 
-    main section.s4 {
+    section.s4 {
         .comments {
             margin-right: 0;
         }
     }
-    main section.s4 .comment .profile img {
+    section.s4 .comment .profile img {
         width: 50px;
         height: 50px;
     }
@@ -2746,7 +2775,7 @@ div#nav {
         left: 0;
         background-color: #fff;
         color: #000;
-        z-index: 1;
+        z-index: 2;
         font-family: "Gilroy";
         & ul {
             display: grid;
@@ -2754,11 +2783,13 @@ div#nav {
             list-style: none;
             & li {
                 font-weight: 600;
-                padding: 12px 2px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 & a {
+                    padding: 12px 2px;
+                    width: 100%;
+                    height: 100%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -2836,6 +2867,9 @@ div#nav {
         margin-top: -10px;
         padding-top: 10px;
         background-color: #000;
+    }
+    body > .links ul li::before {
+        display: none;
     }
     /* main .s3 .sec-2, */
     main .cont-2 .sec-2 .swiper-wrapper article, main .s3 .sec-2 .swiper-wrapper article{

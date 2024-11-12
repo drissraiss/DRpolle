@@ -1,13 +1,8 @@
-window.onload = () => {
-    toggle_part2_of_logo();
-    add_slide_1()
-    add_slide_2()
-};
+
 const btn_scroll_top = document.querySelector(".scroll_top");
 const appointment = document.getElementById("appointment");
 // for show/hide button scroll to top of page
-window.onscroll = () => {
-    toggle_part2_of_logo();
+const show_hide_button_scroll = () => {
     if (window.scrollY >= 400) {
         btn_scroll_top.classList.remove("hide")
         appointment.classList.add("offset_to_left")
@@ -15,26 +10,18 @@ window.onscroll = () => {
         btn_scroll_top.classList.add("hide")
         appointment.classList.remove("offset_to_left")
     }
+}
+window.onscroll = () => {
+    try {
+        toggle_part2_of_logo()
+    } catch(e){}
+    show_hide_button_scroll()
 };
 
 btn_scroll_top.onclick = () => {
     window.scrollTo(0, 0);
 };
-// for show/hide part 2 of logo
-function toggle_part2_of_logo() {
-    const part2_of_logo = document.querySelector(".part2_of_logo");
-    const logo = document.querySelector(".logo");
-    if (!window.scrollY) {
-        part2_of_logo.classList.add("show");
-        part2_of_logo.classList.remove("hide");
-        logo.classList.remove("top0");
-    } else {
-        part2_of_logo.classList.add("hide");
-        part2_of_logo.classList.remove("show");
-        logo.classList.add("top0");
 
-    }
-}
 
 // for show/hide nav links
 const hamburger_btn = document.querySelector(".header_main .btn_menu .hamburger_btn ");
@@ -60,7 +47,9 @@ function toggle_nav() {
         document.querySelector("body .links").style.filter = "none";
         document.querySelector("nav").classList.add("hide")
         document.body.removeEventListener("click", close_nav);
-        toggle_part2_of_logo();
+        try {
+            toggle_part2_of_logo();
+        }catch (e){}
     }
 }
 btn_menu.onclick = toggle_nav;
@@ -92,19 +81,9 @@ li_nav.forEach((element) => {
     };
 });
 
-// change image screen on hover
-const articles = document.querySelectorAll("main .cont-3 .control > article");
-const img_screen = document.querySelector("main .cont-3 .screen img");
-articles.forEach((element) => {
-    element.addEventListener("mouseover", () => {
-        articles.forEach((e) => e.classList.remove("active"));
-        element.classList.add("active");
-        img_screen.src = element.querySelector("img").src;
-    });
-});
 
 // show form add respond in list comments
-const buttons_respond = document.querySelectorAll("main section.s4 .header_comment .respond");
+const buttons_respond = document.querySelectorAll("section.s4 .header_comment .respond");
 const form_comment = document.getElementById("form-comment");
 buttons_respond.forEach((e) => {
     e.onclick = function () {
@@ -116,15 +95,20 @@ buttons_respond.forEach((e) => {
         show_all_comments();
     };
 });
-document.querySelector(".form-comment__closeBtn").onclick = () => {
-            form_comment.classList.remove("show_form_respond")
-        }
+let form_comment__closeBtn =  document.querySelector(".form-comment__closeBtn")
+if(form_comment__closeBtn){
+    form_comment__closeBtn.onclick = () => {
+        form_comment.classList.remove("show_form_respond")
+    }
+}
 // show all comments
-const btn_show_all_comments = document.querySelector("main section.s4 .btn_show_all_comments");
-btn_show_all_comments.onclick = show_all_comments;
+const btn_show_all_comments = document.querySelector("section.s4 .btn_show_all_comments");
+if(btn_show_all_comments){
+    btn_show_all_comments.onclick = show_all_comments;
+}
 function show_all_comments() {
     btn_show_all_comments.style.display = "none";
-    document.querySelector("main section.s4 .comments").classList.remove("show-few");
+    document.querySelector("section.s4 .comments").classList.remove("show-few");
 }
 
 // button search box
@@ -135,85 +119,7 @@ btn_search_box.onclick = () => {
     inupt_search_box.focus();
 };
 
-// slider automatique
-const articles_s5 = document.querySelectorAll("main .cont-5 .sec-2 article");
-let i_s5 = 0;
-const active_article = (i) => {
-    articles_s5.forEach((element) => {
-        element.classList.remove("active");
-    });
-    articles_s5[i].classList.add("active");
-};
-setInterval(() => {
-    active_article(i_s5++);
-    if (i_s5 == 3) i_s5 = 0;
-}, 5000);
-
+// reset transition in reload page
 setTimeout(() => {
     document.body.classList.remove("preload");
 }, 700);
-
-
-
-// show slide in mode phone
-window.addEventListener("resize", function () {
-    add_slide_1()
-    add_slide_2()
-})
-// slide 1
-var swiper_1;
-let cont2__swiper =  document.getElementById("cont-2__swiper")
-let cont2__swiper__content = cont2__swiper.innerHTML
-function add_slide_1() {
-    var width_screen = window.innerWidth
-    if(width_screen <= 960){
-        cont2__swiper.classList.add("cont-2__swiper");
-        swiper_1 = new Swiper(".cont-2__swiper", {
-            spaceBetween: 30,
-            pagination: {
-                el: ".cont-2__swiper-pagination",
-                clickable: true,
-            },/* 
-            autoplay: {
-                delay: 3000, 
-            },*/
-            loop: true 
-            });
-        
-    }else{
-        if(swiper_1){
-            swiper_1.destroy(true, true);
-            swiper_1 = null;
-            cont2__swiper.innerHTML = cont2__swiper__content
-        }
-    }
-}
-// slide 2
-var swiper_2;
-let s3__swiper =  document.getElementById("s3__swiper")
-let s3__swiper__content = s3__swiper.innerHTML
-function add_slide_2() {
-    var width_screen = window.innerWidth
-    if(width_screen <= 960){
-        s3__swiper.classList.add("s3__swiper");
-        swiper_2 = new Swiper(".s3__swiper", {
-            spaceBetween: 30,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },/* 
-            autoplay: {
-                delay: 3000, 
-            }, */
-            loop: true
-
-            });
-        
-    }else{
-        if(swiper_2){
-            swiper_2.destroy(true, true);
-            swiper_2 = null;
-            s3__swiper.innerHTML = s3__swiper__content
-        }
-    }
-}

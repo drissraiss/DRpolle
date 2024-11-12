@@ -1,0 +1,53 @@
+@use "../utils/variables" as *;
+@use "../utils/placeholders" as *;
+@use "../utils/mixins" as *;
+
+.main__list-links {
+    @include overlap-padding(100px, 100px);
+    padding: 32px 100px;
+    background: linear-gradient($main-color, $second-color);
+    h2 {
+        margin-bottom: 20px;
+        font-family: Gilroy;
+        font-size: 36px;
+        font-weight: 800;
+        line-height: 36px;
+        text-align: center;
+        color: #fff;
+    }
+    &__container {
+        display: grid;
+        gap: 10px;
+        align-items: center;
+    }
+    &__item {
+        text-transform: uppercase;
+        font-family: Gilroy;
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 20.83px;
+        letter-spacing: 0.1em;
+        text-align: center;
+        padding: 10px 15px;
+        color: #000;
+        background-color: #fff;
+        @extend %flex-center;
+        border: 1px solid transparent;
+        transition: all 0.4s ease;
+        &:hover {
+            background-color: $main-color;
+            border-color: #fff;
+            color: #fff;
+        }
+    }
+}
+
+@media (max-width: $max-width) {
+    .main__list-links {
+        @include overlap-padding(20px, 20px);
+        padding: 32px 20px;
+        &__container {
+            grid-template-columns: 1fr !important;
+        }
+    }
+}

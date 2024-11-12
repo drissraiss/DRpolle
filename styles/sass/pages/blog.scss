@@ -1,0 +1,167 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../components/categories";
+
+.main {
+    &__header {
+        &__txt {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__posts {
+        margin-bottom: 20px;
+        > .wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 20px;
+            row-gap: 32px;
+        }
+        .pagination {
+            position: relative;
+            margin-top: 24px;
+            margin-bottom: 32px;
+            border-top: 1px solid $main-color;
+            border-bottom: 1px solid $main-color;
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            column-gap: 13px;
+            justify-content: center;
+            &__item {
+                font-size: 15px;
+                font-weight: 800;
+                color: $main-color;
+                @include squire(30px);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.5s ease;
+                border-radius: 50%;
+                &--active {
+                    color: #fff;
+                    background-color: $main-color;
+                    transform: scale(1.4);
+                }
+                &:hover {
+                    color: #fff;
+                    background-color: $main-color;
+                    border-radius: 50%;
+                    transform: scale(1.4);
+                }
+            }
+
+            &__row-left,&__row-right {
+                cursor: pointer;
+                position: absolute;
+                transition: .5s transform ease ;
+            }
+            &__row-left {
+                left: 0;
+                transform: rotate(180deg);
+                &:hover {
+                    transform: rotate(180deg) scale(1.5);
+                }
+            }
+            &__row-right {
+                right: 0;
+                &:hover {
+                    transform: scale(1.5);
+                }
+            }
+        }
+        &__item {
+            transition: .4s all ease;
+            &:hover {
+                transform: translateY(-20px);
+            }
+            &:hover &__header::before {
+                background-color: #650200bf;
+            }
+            width: 100%;
+            position: relative;
+            /* margin-bottom: ; */
+            &__ctg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                font-family: Gilroy;
+                font-size: 15px;
+                font-weight: 800;
+                text-align: center;
+                padding: 8px 20px;
+                color: #fff;
+                background-color: $main-color;
+                border-end-end-radius: 20px;
+            }
+            &__header {
+                overflow: hidden;
+                height: 265px;
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                }
+                position: relative;
+                &::before {
+
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                    transition: all 0.3s;
+                }
+            }
+            &__body {
+                padding: 20px 0 20px 20px;
+                border-left: 1px solid $main-color;
+                .date {
+                    font-size: 13px;
+                    font-weight: 400;
+                    text-align: left;
+                }
+                .title {
+                    font-family: Gilroy;
+                    font-size: 20px;
+                    font-weight: 800;
+                    text-align: left;
+                    margin-top: 10px;
+                    margin-bottom: 5px;
+                }
+                .desc {
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 30px;
+                    text-align: left;
+                    margin-bottom: 10px;
+                }
+                a {
+                    font-family: Gilroy;
+                    font-size: 15px;
+                    font-weight: 800;
+                    line-height: 25px;
+                    letter-spacing: 0.05em;
+                    text-align: left;
+                    text-transform: uppercase;
+                    padding-bottom: 5px;
+                    color: $main-color;
+                    @include underline-transition(2px, $main-color, 0, 0.4, true);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $max-width) {
+    .main {
+        &__posts {
+            > .wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            &__item {
+                @include overlap-padding(20px);
+            }
+        }
+    }
+}
